@@ -1,94 +1,93 @@
-body {
+.todo_main {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 240, 240);
-  margin: 0;
+  background-color:antiquewhite;
 }
 
-p {
-  margin: 0;
-}
-
-a {
- text-decoration: unset;
- cursor: pointer;
-}
-
-li {
-  list-style: none;
-}
-
-.container {
+.todo_main .todo_section {
   position: relative;
   box-sizing: border-box;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transition: 0.5s transform ease;
   width: 400px;
-  height: 500px;
-  background-color: rgb(255, 255, 255);
+  height: 600px;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  padding: 40px 30px;
+  box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2);
+  padding: 30px;
 }
 
-.container .title {
+.todo_main .todo_section:hover {
+  transform: scale(1.05);
+}
+
+.todo_main .todo_section .title_box {
   text-align: center;
-  padding-bottom: 10px;
-  font-size: 30px;
-  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.container .sub_title {
-  text-align: center;
-  font-size: 14px;
+.todo_main .todo_section .title_box .title {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.container .btn_box {
-  text-align: center;
-  padding: 10px;
+.todo_main .todo_section .title_box .sub_title {
+   font-size: 14px;
 }
 
-.container .btn_box .todo_input_text {
-
-}
-
-
-.container .btn_box .todo_input_submit {
-  background-color: rgb(255, 123, 114);
-  box-shadow: none;
-  border: 1px solid rgb(255, 213, 213);
-  border-radius: 5px;
-  color: white;
-}
-
-
-.container .btn_box .todo_input_text::placeholder {
-  font-size: 12px;
-}
-
-.container .list {
+.todo_main .todo_section #todo_input_box {
   position: relative;
-  box-sizing: border-box;
+  display: flex;
   width: 100%;
-  height: 310px;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.todo_main .todo_section #todo_input_box #todo_input {
+  flex: 8;
+}
+
+.todo_main .todo_box {
+  position: relative;
+  padding: 10px;
+  border: 1px solid rgb(255, 158, 60);
+  border-radius: 10px;
+  height: 70%;
   overflow-y: scroll;
 }
 
-.container .list .todo_element {
-  padding: 10px;
+.todo_main .todo_box li {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ gap: 5px;
+ margin-bottom: 10px;
 }
 
-.container .list .todo_element::before {
-  content: '►';
-  margin-right: 10px;
+.todo_main .todo_box li:last-child {
+  margin-bottom: 0;
 }
 
-.delete_btn {
-  border: 1px solid rgb(112, 112, 255);
-  border-radius: 5px;
-  margin-left: 10px;
-  background-color: rgb(127, 127, 255);
-  color: white;
+.todo_main .todo_box li::before {
+  content: '>';
+  flex: 1;
+}
+
+.todo_main .todo_box li p {
+  flex: 8;
+  word-break: break-all;
+  cursor: pointer;
+  transition: 0.3s opacity ease;
+}
+
+.todo_main .todo_box li p:hover {
+  opacity: 0.5;
+}
+
+.todo_main .todo_box li button {
+  display: block;
 }

@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./style/index.css" />
     <script async src="./JS/index.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
     <title>Todo</title>
   </head>
   <body>
-    <div class="container">
-      <p class="title">To-Do</p>
-      <p class="sub_title">잘 살자 😀</p>
-      <form class="btn_box">
-        <input
-          class="todo_input_text"
-          placeholder="할 일을 입력해주세요."
-          type="text"
-        />
-        <input class="todo_input_submit" type="submit" value="등록" />
-      </form>
-      <ul class="list"></ul>
-    </div>
+    <main class="todo_main">
+      <section class="todo_section">
+        <div class="title_box">
+          <p class="title">TODO LIST</p>
+          <p class="sub_title">오늘 할 일을 내릴로 미루지 말자 😀</p>
+        </div>
+
+        <form id="todo_input_box">
+          <input id="todo_input" type="text" />
+          <input
+            id="todo_add_btn"
+            type="submit"
+            value="등록"
+            class="main_btn"
+          />
+        </form>
+
+        <ul class="todo_box"></ul>
+      </section>
+    </main>
   </body>
 </html>
